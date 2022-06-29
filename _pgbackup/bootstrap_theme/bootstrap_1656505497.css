@@ -1,5 +1,5 @@
 html {
-  font-size: 75% !important; }
+  font-size: 100% !important; }
 
 /*!
  * Bootstrap v5.0.1 (https://getbootstrap.com/)
@@ -49,7 +49,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
-  background-color: #000000;
+  background-color: white;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
@@ -456,7 +456,7 @@ progress {
 
 .img-thumbnail {
   padding: 0.25rem;
-  background-color: #000000;
+  background-color: white;
   border: 1px solid #dee2e6;
   border-radius: 1rem;
   max-width: 100%;
@@ -1766,9 +1766,9 @@ textarea.form-control-lg {
   .form-range:focus {
     outline: 0; }
     .form-range:focus::-webkit-slider-thumb {
-      box-shadow: 0 0 0 1px #000000, 0 0 0 0.25rem rgba(13, 110, 253, 0.25); }
+      box-shadow: 0 0 0 1px white, 0 0 0 0.25rem rgba(13, 110, 253, 0.25); }
     .form-range:focus::-moz-range-thumb {
-      box-shadow: 0 0 0 1px #000000, 0 0 0 0.25rem rgba(13, 110, 253, 0.25); }
+      box-shadow: 0 0 0 1px white, 0 0 0 0.25rem rgba(13, 110, 253, 0.25); }
   .form-range::-moz-focus-outer {
     border: 0; }
   .form-range::-webkit-slider-thumb {
@@ -2910,8 +2910,8 @@ textarea.form-control-lg {
   .nav-tabs .nav-link.active,
   .nav-tabs .nav-item.show .nav-link {
     color: #495057;
-    background-color: #000000;
-    border-color: #dee2e6 #dee2e6 #000000; }
+    background-color: white;
+    border-color: #dee2e6 #dee2e6 white; }
   .nav-tabs .dropdown-menu {
     margin-top: -1px;
     border-top-left-radius: 0;
@@ -3264,9 +3264,6 @@ textarea.form-control-lg {
   margin-bottom: -0.5rem;
   margin-left: -0.5rem;
   border-bottom: 0; }
-  .card-header-tabs .nav-link.active {
-    background-color: white;
-    border-bottom-color: white; }
 
 .card-header-pills {
   margin-right: -0.5rem;
@@ -3337,7 +3334,7 @@ textarea.form-control-lg {
   font-size: 1rem;
   color: #212529;
   text-align: left;
-  background-color: #000000;
+  background-color: white;
   border: 0;
   border-radius: 0;
   overflow-anchor: none;
@@ -3377,7 +3374,7 @@ textarea.form-control-lg {
   margin-bottom: 0; }
 
 .accordion-item {
-  background-color: #000000;
+  background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.125); }
   .accordion-item:first-of-type {
     border-top-left-radius: 1rem;
@@ -5801,7 +5798,7 @@ textarea.form-control-lg {
   background-color: #000000 !important; }
 
 .bg-body {
-  background-color: #000000 !important; }
+  background-color: white !important; }
 
 .bg-white {
   background-color: white !important; }
