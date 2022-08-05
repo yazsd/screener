@@ -25,7 +25,7 @@ $(document).ready(function(){
       		var money=$(".money");
       		for (var i = 0; i < money.length; i++) {
       			var number=money[i].innerText;
-      			var number1=number/10;
+      			var number1=number/1000;
       			if ((number1 > 100) && (number1 < 25000000000)) {
       			    var aaa=$(money[i]).parents("tr");
       				$(aaa).css("display","");	
@@ -41,7 +41,7 @@ $(document).ready(function(){
       		var money=$(".money");
       		for (var i = 0; i < money.length; i++) {
       			var number=money[i].innerText;
-      			var number1=number/10;
+      			var number1=number/1000;
       			if ((number1 > 250) && (number1 < 50000000000)) {
       			    var aaa=$(money[i]).parents("tr");
       				$(aaa).css("display","");	
@@ -57,7 +57,7 @@ $(document).ready(function(){
       		var money=$(".money");
       		for (var i = 0; i < money.length; i++) {
       			var number=money[i].innerText;
-      			var number1=number/10;
+      			var number1=number/1000;
       			if ((number1 > 500) && (number1 < 10000000000)) {
       			    var aaa=$(money[i]).parents("tr");
       				$(aaa).css("display","");	
@@ -72,7 +72,7 @@ $(document).ready(function(){
       		var money=$(".money");
       		for (var i = 0; i < money.length; i++) {
       			var number=money[i].innerText;
-      			var number1=number/10;
+      			var number1=number/1000;
       			if (number1 > 1000) {
       			     var aaa=$(money[i]).parents("tr");
       				$(aaa).css("display","");	
@@ -120,17 +120,17 @@ $(document).ready(function(){
                     var actual_price=((item.bids[bid_index][0]*item.bids[bid_index][1])+(item.asks[ask_index][0]*item.asks[ask_index][1]))/2;
            	   			content = "<tr>";
            	   			content += '<td>' + symbol +'</td>';
-	               	  content += '<td class="money">' +Math.max(Number(item.bids[bid_index][0])*Number(item.bids[bid_index][1]),Number(item.asks[ask_index][0])*(item.asks[ask_index][1])).toFixed(4) + '</td>';
+	               	  content += '<td class="money">' +Math.max(Number(item.bids[bid_index][0])*Number(item.bids[bid_index][1]),Number(item.asks[ask_index][0])*(item.asks[ask_index][1])).toFixed(1) + '</td>';
 	               	  content += '<td>' + Math.max(Number(item.bids[bid_index][0]),Number(item.asks[ask_index][0])).toFixed(4)+ '</td>';
-	               	  content += '<td>' + (Math.max(Number(item.bids[bid_index][1]),Number(item.asks[ask_index][1]))).toFixed(4) + '</td>';
-	               	  content += '<td>' + (((Math.max(Number(item.bids[bid_index][0])*Number(item.bids[bid_index][1]),Number(item.asks[ask_index][0])*(item.asks[ask_index][1]))-actual_price)/actual_price)*10).toFixed(4)	+ '%' + '</td>';
+	               	  content += '<td>' + (Math.max(Number(item.bids[bid_index][1]),Number(item.asks[ask_index][1]))).toFixed(1) + '</td>';
+	               	  content += '<td>' + (((Math.max(Number(item.bids[bid_index][0])*Number(item.bids[bid_index][1]),Number(item.asks[ask_index][0])*(item.asks[ask_index][1]))-actual_price)/actual_price)*10).toFixed(2)	+ '%' + '</td>';
 	               	  content += "</tr>";
 	               	  $("tbody").append(content);}
 			            	if (name == "two" ) {
 			            		var money=$(".money");
 			            		for (var i = 0; i < money.length; i++) {
 			            			var number=money[i].innerText;
-			            			var number1=number/10;
+			            			var number1=number/1000;
 			            			if ((number1 > 100) && (number1 < 25000000000)) {
 			            			    var aaa=$(money[i]).parents("tr");
 			            				$(aaa).css("display","");	
@@ -145,7 +145,7 @@ $(document).ready(function(){
 			            		var money=$(".money");
 			            		for (var i = 0; i < money.length; i++) {
 			            			var number=money[i].innerText;
-			            			var number1=number/10;
+			            			var number1=number/1000;
 			            			if ((number1 > 250) && (number1 < 50000000000)) {
 			            			    var aaa=$(money[i]).parents("tr");
 			            				$(aaa).css("display","");	
@@ -160,7 +160,7 @@ $(document).ready(function(){
 			            		var money=$(".money");
 			            		for (var i = 0; i < money.length; i++) {
 			            			var number=money[i].innerText;
-			            			var number1=number/10;
+			            			var number1=number/1000;
 			            			if ((number1 > 500) && (number1 < 10000000000)) {
 			            			    var aaa=$(money[i]).parents("tr");
 			            				$(aaa).css("display","");	
@@ -175,7 +175,7 @@ $(document).ready(function(){
 			            		var money=$(".money");
 			            		for (var i = 0; i < money.length; i++) {
 			            			var number=money[i].innerText;
-			            			var number1=number/10;
+			            			var number1=number/1000;
 			            			if (number1 > 1000) {
 			            			     var aaa=$(money[i]).parents("tr");
 			            				$(aaa).css("display","");	
