@@ -1,11 +1,12 @@
-<!DOCTYPE html> 
-<html> 
-    <head> 
-        <meta charset="utf-8"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1"> 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>         
-        <link href="bootstrap_theme/bootstrap.css" rel="stylesheet" type="text/css"> 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>         
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="favicon.png"/>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link href="bootstrap_theme/bootstrap.css" rel="stylesheet" type="text/css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <script type="text/javascript">	 
 $(document).ready(function(){
  	var name='one';
@@ -25,8 +26,8 @@ $(document).ready(function(){
       		var money=$(".money");
       		for (var i = 0; i < money.length; i++) {
       			var number=money[i].innerText;
-      			var number1=number.replace("k","");
-      			if ((number1 > 100) && (number1 < 250)) {
+      			var number1=number/1000;
+      			if ((number1 > 100) && (number1 < 25000000000)) {
       			    var aaa=$(money[i]).parents("tr");
       				$(aaa).css("display","");	
       			}
@@ -41,8 +42,8 @@ $(document).ready(function(){
       		var money=$(".money");
       		for (var i = 0; i < money.length; i++) {
       			var number=money[i].innerText;
-      			var number1=number.replace("k","");
-      			if ((number1 > 250) && (number1 < 500)) {
+      			var number1=number/1000;
+      			if ((number1 > 250) && (number1 < 50000000000)) {
       			    var aaa=$(money[i]).parents("tr");
       				$(aaa).css("display","");	
       			}
@@ -57,8 +58,8 @@ $(document).ready(function(){
       		var money=$(".money");
       		for (var i = 0; i < money.length; i++) {
       			var number=money[i].innerText;
-      			var number1=number.replace("k","");
-      			if ((number1 > 500) && (number1 < 1000)) {
+      			var number1=number/1000;
+      			if ((number1 > 500) && (number1 < 10000000000)) {
       			    var aaa=$(money[i]).parents("tr");
       				$(aaa).css("display","");	
       			}
@@ -72,7 +73,7 @@ $(document).ready(function(){
       		var money=$(".money");
       		for (var i = 0; i < money.length; i++) {
       			var number=money[i].innerText;
-      			var number1=number.replace("k","");
+      			var number1=number/1000;
       			if (number1 > 1000) {
       			     var aaa=$(money[i]).parents("tr");
       				$(aaa).css("display","");	
@@ -85,7 +86,7 @@ $(document).ready(function(){
       	}
       });
 });
-</script>         
+</script>
         <script>
 	function refreshing(name){	  
 		var content="";	
@@ -120,18 +121,18 @@ $(document).ready(function(){
                     var actual_price=((item.bids[bid_index][0]*item.bids[bid_index][1])+(item.asks[ask_index][0]*item.asks[ask_index][1]))/2;
            	   			content = "<tr>";
            	   			content += '<td>' + symbol +'</td>';
-	               	  content += '<td class="money">' +( actual_price/1000).toFixed(4) + 'k' + '</td>';
+	               	  content += '<td class="money">' +Math.max(Number(item.bids[bid_index][0])*Number(item.bids[bid_index][1]),Number(item.asks[ask_index][0])*(item.asks[ask_index][1])).toFixed(1) + '</td>';
 	               	  content += '<td>' + Math.max(Number(item.bids[bid_index][0]),Number(item.asks[ask_index][0])).toFixed(4)+ '</td>';
-	               	  content += '<td>' + (Math.max(Number(item.bids[bid_index][1]),Number(item.asks[ask_index][1]))/1000).toFixed(4)+ 'k' + '</td>';
-	               	  content += '<td>' + (((Math.max(Number(item.bids[bid_index][0])*Number(item.bids[bid_index][1]),Number(item.asks[ask_index][0])*(item.asks[ask_index][1]))-actual_price)/actual_price)*10).toFixed(4)	+ '%' + '</td>';
+	               	  content += '<td>' + (Math.max(Number(item.bids[bid_index][1]),Number(item.asks[ask_index][1]))).toFixed(1) + '</td>';
+	               	  content += '<td>' + (((Math.max(Number(item.bids[bid_index][0])*Number(item.bids[bid_index][1]),Number(item.asks[ask_index][0])*(item.asks[ask_index][1]))-actual_price)/actual_price)*10).toFixed(2)	+ '%' + '</td>';
 	               	  content += "</tr>";
 	               	  $("tbody").append(content);}
 			            	if (name == "two" ) {
 			            		var money=$(".money");
 			            		for (var i = 0; i < money.length; i++) {
 			            			var number=money[i].innerText;
-			            			var number1=number.replace("k","");
-			            			if ((number1 > 100) && (number1 < 250)) {
+			            			var number1=number/1000;
+			            			if ((number1 > 100) && (number1 < 25000000000)) {
 			            			    var aaa=$(money[i]).parents("tr");
 			            				$(aaa).css("display","");	
 			            			}
@@ -145,8 +146,8 @@ $(document).ready(function(){
 			            		var money=$(".money");
 			            		for (var i = 0; i < money.length; i++) {
 			            			var number=money[i].innerText;
-			            			var number1=number.replace("k","");
-			            			if ((number1 > 250) && (number1 < 500)) {
+			            			var number1=number/1000;
+			            			if ((number1 > 250) && (number1 < 50000000000)) {
 			            			    var aaa=$(money[i]).parents("tr");
 			            				$(aaa).css("display","");	
 			            			}
@@ -160,8 +161,8 @@ $(document).ready(function(){
 			            		var money=$(".money");
 			            		for (var i = 0; i < money.length; i++) {
 			            			var number=money[i].innerText;
-			            			var number1=number.replace("k","");
-			            			if ((number1 > 500) && (number1 < 1000)) {
+			            			var number1=number/1000;
+			            			if ((number1 > 500) && (number1 < 10000000000)) {
 			            			    var aaa=$(money[i]).parents("tr");
 			            				$(aaa).css("display","");	
 			            			}
@@ -175,7 +176,7 @@ $(document).ready(function(){
 			            		var money=$(".money");
 			            		for (var i = 0; i < money.length; i++) {
 			            			var number=money[i].innerText;
-			            			var number1=number.replace("k","");
+			            			var number1=number/1000;
 			            			if (number1 > 1000) {
 			            			     var aaa=$(money[i]).parents("tr");
 			            				$(aaa).css("display","");	
@@ -195,21 +196,19 @@ $(document).ready(function(){
         coin.forEach(drawRow);
   }
 
-	</script>         
-        <title> 
+	</script>
+        <title>
             Cryptor Screeen
-</title>         
-    </head>     
-    <body> 
-        <div style="height: 650px;width:100%;"> 
-            <div style="overflow-y: scroll;"> 
+</title>
+        <script>/* Pinegrow Interactions, do not remove */ (function(){try{if(!document.documentElement.hasAttribute('data-pg-ia-disabled')) { window.pgia_small_mq=typeof pgia_small_mq=='string'?pgia_small_mq:'(max-width:767px)';window.pgia_large_mq=typeof pgia_large_mq=='string'?pgia_large_mq:'(min-width:768px)';var style = document.createElement('style');var pgcss='html:not(.pg-ia-no-preview) [data-pg-ia-hide=""] {opacity:0;visibility:hidden;}html:not(.pg-ia-no-preview) [data-pg-ia-show=""] {opacity:1;visibility:visible;display:block;}';if(document.documentElement.hasAttribute('data-pg-id') && document.documentElement.hasAttribute('data-pg-mobile')) {pgia_small_mq='(min-width:0)';pgia_large_mq='(min-width:99999px)'} pgcss+='@media ' + pgia_small_mq + '{ html:not(.pg-ia-no-preview) [data-pg-ia-hide="mobile"] {opacity:0;visibility:hidden;}html:not(.pg-ia-no-preview) [data-pg-ia-show="mobile"] {opacity:1;visibility:visible;display:block;}}';pgcss+='@media ' + pgia_large_mq + '{html:not(.pg-ia-no-preview) [data-pg-ia-hide="desktop"] {opacity:0;visibility:hidden;}html:not(.pg-ia-no-preview) [data-pg-ia-show="desktop"] {opacity:1;visibility:visible;display:block;}}';style.innerHTML=pgcss;document.querySelector('head').appendChild(style);}}catch(e){console&&console.log(e);}})()</script>
+    </head>
+    <body>
+        <div style="height: 650px;width:100%;">
+            <div style="overflow-y: scroll;">
                 <nav class="bg-black navbar navbar-expand-lg navbar-light py-lg-1"> 
+                    <a class="fw-bold navbar-brand text-transparent text-white" href="home.html" target="">CRYPTO SCREENER</a>
                     <div class="container"> 
-                        <a class="fw-bold navbar-brand text-transparent text-white" href="home.html" target="">CRYPTO SCREENER</a>
                         <div class="w-100"></div>                         
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown-3" aria-controls="navbarNavDropdown-3" aria-expanded="false" aria-label="Toggle navigation"> 
-                            <span class="navbar-toggler-icon"></span> 
-                        </button>                         
                         <div class="collapse navbar-collapse " id="navbarNavDropdown-3"> 
                             <ul class="ms-auto navbar-nav"> 
                                 <li class="nav-item"> 
@@ -232,32 +231,75 @@ $(document).ready(function(){
                     </div>
                     <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group" style="width: 418px;"> 
                         <input type="checkbox" class="btn-check" id="groupcheckbox3" autocomplete="off"> 
-                        <label class="btn btn-outline-white text-white" for="groupcheckbox3" style="padding-left: 0; padding-right: 0;">Home</label>                         
+                        <a href=""></a>
+                        <a class="fw-bold navbar-brand text-transparent text-white" href="home.html" target="" style="padding-left: 10px; padding-right: 10px;">HOME</a> 
                         <input type="checkbox" class="btn-check" id="groupcheckbox4" autocomplete="off"> 
-                        <label class="btn btn-outline-white text-white" for="groupcheckbox4">How to use</label>                         
+                        <a href="how-to-use.html"></a>
+                        <a class="fw-bold navbar-brand text-transparent text-white" href="how-to-use.html" target="" style="padding-left: 10px; padding-right: 10px;">HOW TO USE</a> 
                         <input type="checkbox" class="btn-check" id="groupcheckbox5" autocomplete="off"> 
-                        <a href="index.html"><label class="btn btn-outline-white text-white" for="groupcheckbox5" style="padding-left: 30px; padding-right: 30px;">About us</label></a> 
+                        <a href="about-us.html"></a>
+                        <a class="fw-bold navbar-brand text-transparent text-white" href="about-us.html" target="" style="padding-left: 10px; padding-right: 10px;">ABOUT US</a> 
                     </div>                     
                 </nav>
-                <h2>Spot</h2> 
-                <table class="table table-striped"> 
-                    <thead> 
-                        <th>Coin Name</th> 
-                        <th>Dollars in Level</th> 
-                        <th>Price</th> 
-                        <th>Coins in Level</th> 
-                        <th>Distance to level</th> 
-                    </thead>                     
-                    <tbody> 
-</tbody>                     
-                </table>                 
+                <nav class="bg-black fw-lighter navbar navbar-expand-lg navbar-light py-lg-1">
+                    <br>
+                    <br>Attention! Do not refresh page , our service have auto-refresh every 30sec. If data disapear maybe you get temporar restricted by Binance. 
+                </nav>
+                <h2 style="height: 130px;">Spot<div class="filter" style="margin-top: 30px;">
+                        <button type="button" class="btn btn-success" id="one">From</button>
+                        <button type="button" class="btn btn-success" id="two">from 100k</button>
+                        <button type="button" class="btn btn-success" id="three">from 250k</button>
+                        <button type="button" class="btn btn-success" id="four">from 500k</button>
+                        <button type="button" class="btn btn-success" id="five">from 1 million</button>                         
+                    </div></h2>
+                <table class="table table-striped" style="width: 63px; font-size: 21px;"> 
+                    <thead>
+                        <th style="font-size: 13px;" class="fw-lighter">Coin Name</th>
+                        <th style="font-size: 13px;" class="fw-lighter">Dollars in Level</th>
+                        <th style="font-size: 13px;" class="fw-lighter">Price</th>
+                        <th style="font-size: 13px;" class="fw-lighter">Coins in Level</th>
+                        <th style="font-size: 13px;" class="fw-lighter">Distance to level</th>
+                    </thead>
+                    <tbody>
+</tbody>
+                </table>
+            </div>
+
+        <script src="pgia/lib/pgia.js"></script>
+        <script>
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+    return new bootstrap.Popover(popoverTriggerEl);
+})
+</script>
+    </body>
+    <div class="container pg-empty-placeholder"></div>
+    <div class="container pg-empty-placeholder"></div>
+    <div class="container pg-empty-placeholder"></div>
+    <section> 
+        <div class="container"> 
+            <div class="justify-content-center row"> 
+                <div class="col-lg-4 col-md-6 py-3" style="padding-right: 350px; margin-right: -300px;"> 
+                    <div class="position-relative text-dark"> 
+                        <a href="https://www.instagram.com/yazz0r_/"><img src="inst" alt="Product image" width="280" height="200" class="img-fluid w-100"></a> 
+                    </div>                     
+                </div>
+                <div class="col-lg-4 col-md-6 py-3" style="padding-right: 350px; margin-right: -300px;"> 
+                    <div class="position-relative text-dark"> 
+                        <a href="https://www.tiktok.com/@yazz0r"><img src="tiktok" class="img-fluid w-100" alt="Product image" width="280" height="200"></a> 
+                    </div>                     
+                </div>
+                <div class="col-lg-4 col-md-6 py-3" style="padding-right: 350px; margin-right: -300px;"> 
+                    <div class="position-relative text-dark"> 
+                        <a href="https://www.youtube.com/channel/UC15B1w94HCY2N3LKQwdw9Xg"><img src="yt" class="img-fluid w-100" alt="Product image" width="280" height="200"></a> 
+                    </div>                     
+                </div>
+                <div class="col-lg-4 col-md-6 py-3" style="padding-right: 350px; margin-right: -300px;"> 
+                    <div class="position-relative text-dark"> 
+                        <a href="https://t.me/yazz0r_support"><img src="tg" class="img-fluid w-100" alt="Product image" width="280" height="200"></a> 
+                    </div>                     
+                </div>                 
             </div>             
-            <div class="filter" style="margin-top: 30px;margin-left: 30px;"> 
-                <button type="button" class="btn btn-success" id="one">From</button>                 
-                <button type="button" class="btn btn-success" id="two">100k from 250k</button>                 
-                <button type="button" class="btn btn-success" id="three">250k From 500k</button>                 
-                <button type="button" class="btn btn-success" id="four">500k From 1 million</button>                 
-                <button type="button" class="btn btn-success" id="five">From 1 million</button>                 
-            </div>             
-    </body>     
+        </div>         
+    </section>
 </html>
